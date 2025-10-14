@@ -48,7 +48,19 @@ Which means,
 $$ \mathrm{P}(\lim_{n \to \infty} \bar{X}_n = \mu ) = 1 $$
 
 \section{Central-Limit Theorem}
-
+If you take a large number of independent observation from any population that has finite mean 
+and variance and you compute their mean, the distribution of the mean will look more and more
+like normal distribution (bell curve) \\
+Let $X_1,X_2,X_3,...X_n$ be i.i.d with 
+\begin{itemize}
+    \item Mean$(\mu): \mathbb{E}[X_i]$
+    \item Variance: $\sigma^2 = Var(X_i) < \infty$
+\end{itemize}
+with standard sample mean, \\
+$$Z_n = \frac{\mathbb{E}(X_n)-\mu}{\sigma/\sqrt{n}}$$
+then as $n \to \infty$
+$$ Z_n \longrightarrow \mathcal{N}(0,1) $$
+i.e, the standadized mean converges to normal distribution no matter the distribution of the population
 
 \section{Measure of Central Tendency} 
 
@@ -556,6 +568,8 @@ ANOVA stands for Analysis of Variance. it's a statistical method used to
 compare three or more group means to see if at-least one is significantly 
 different, if you got two groups use t-test
 $$F = \frac{\text{Variance between groups}}{\text{How much data varies inside each group}}$$
+$$ Variance between groups = 
+\frac{\sum(\text{ mean of all data points - variance of each group })^2}{\text{number of groups}} $$
 and calculate p value based on the f-score, and degree of freedom of both numerator and 
 denominator. with p value you can either reject or accept the null's hypothesis \\
 Nulls Hypothesis $H_0$ - All groups are the same\\
@@ -725,7 +739,9 @@ fuller test to determine how many differencing is required for the TS to be
 
 \subsection*{Auto Corelation}
 \subsection{Auto Correlation Function(ACF)}
-Auto correlation Function is a tool used to measure
+Auto correlation Function is a tool used to measure how related the timer series is 
+with the lagged version of itself,
+
 
 
 \subsection{PACF}
@@ -996,3 +1012,6 @@ $$ \text{Elastic Net} = \alpha \text{L1} + (1-\alpha)\text{L2} $$
 \end{enumerate}
 
 \end{document}
+
+
+% Mark - T - time series contn
